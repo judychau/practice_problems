@@ -297,4 +297,12 @@ def adv_find_unique_long_words(my_string):
             unique.append(word)
     return unique
 
-print adv_find_unique_long_words("I ate popcorn, more popcorn, nachos, kale, and coffee.")
+# print adv_find_unique_long_words("I ate popcorn, more popcorn, nachos, kale, and coffee.")
+
+if __name__ == "__main__":
+    import doctest
+    print
+    result = doctest.testmod()
+    if not result.failed:
+        print "*** %s TESTS PASSED. GOOD WORK!" % result.attempted
+    print
