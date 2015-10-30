@@ -97,7 +97,7 @@ def palindrome(word): #kind of like reversing a string in place
 # print palindrome("racecar")
 
 ###################################################################################################
-def prine(n):
+def prime(n):
     """ A prime number is a number >= 2 that is only evenly divisible 
         by itself and 1. So, for example, 3 is a prime number but 4 (divisible by 2) 
         is not. The first few primes are: 2, 3, 5, 7, 11. Write a function that produces 
@@ -128,9 +128,29 @@ def swap_case(S):
             newlist.append(item)
     return "".join(newlist)
 
-S = raw_input()
-print swap_case(S)
+# S = raw_input()
+# print swap_case(S)
+###################################################################################################
+def sub_string(astring, substring):
+    """print the number of times that substring occurs in that string"""
+    match = 0
+    #traverse the string by index; range is exclusive (up to but not including)
+    for index in range(len(astring) - len(substring)+1):
+        #slice the string by the len of the substring; slicing is exclusive
+        #and check if it matches the substring
+        if s[index : index + len(substring)] == substring:
+            match += 1
+    return match
 
+print sub_string('ABCDCDC', 'CDC')
+###################################################################################################
+def fibonacci():
+    """ adding two numbers together and print out the next number"""
+    #initialize a and b
+    a, b = 0, 1
+    for i in range (0, 10):
+        print a
+        a,b = b, a+b
 ###################################################################################################
 class Node(object):
     """ Implement a GetNth() function that takes a linked list and an integer 
