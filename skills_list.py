@@ -13,6 +13,9 @@ def all_odd(number_list):
             odd_list.append(i)
     return odd_list
 
+    #list comprehension
+    # return [d for d in number_list if d % 2 != 0]
+
 # number_list = [1, 2, 7, -5]
 # print all_odd(number_list) 
 
@@ -32,6 +35,9 @@ def all_even(number_list):
         if number % 2 == 0:
             even_list.append(number)
     return even_list
+
+    #list comprehension
+    # return [d for d in number_list if d % 2 == 0]
 
 # number_list = [2, 6, -1, -2]
 # print all_even(number_list) 
@@ -57,7 +63,9 @@ def print_indeces(my_list):
     """
     for i in range(len(my_list)):
             print i, my_list[i]
+
     ####OR###
+
     # i = 0 
     # while i < len(my_list):
     #     print i, my_list[i]
@@ -81,6 +89,9 @@ def long_words(word_list):
         if len(word) > 4:
             long_list.append(word)
     return long_list
+
+    #list comprehension
+    # return [w for w in word_list if len(w) > 4]
 
 # print long_words(["hello", "hey", "spam", "spam", "bacon", "bacon"])
 
@@ -142,6 +153,9 @@ def halvesies(number_list):
     for num in number_list:
         halflist.append(num/2.0)
     return halflist
+
+    #list comprehension
+    #return [i / 2.0 for i in number_list]
 
 # print halvesies([2, 6, -2, 5])
 
@@ -290,8 +304,13 @@ def adv_find_unique_long_words(my_string):
 
     """
     unique = []
-    unique_set = set(unique)
-    string_list = my_string.replace(",", "").split()
+    punctuation=['(', ')', '?', ':', ';', ',', '.', '!', '/', '"', "'"]
+
+    for char in my_string:
+        if char in punctuation:
+            my_string = my_string.replace(char, "")
+            string_list = my_string.split()
+
     for word in string_list:
         if len(word)>=6 and string_list.count(word) == 1:
             unique.append(word)
