@@ -56,6 +56,22 @@ def rev_string(astring):
     return r
 
 # print rev_string("hello")
+###################################################################################################
+def repeat_char(number):
+    """ Print the first repeating character
+        Example: input: 123LK63824K output: 3"""
+
+    new_list = []
+    dupe_list = []
+    
+    for num in number:
+      if num not in new_list:
+        new_list.append(num)
+      else:
+        dupe_list.append(num)
+    print dupe_list[0]     
+          
+# print repeat_char("123LK63824K")
 
 ###################################################################################################
 def anagram(wordlist):
