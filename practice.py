@@ -124,7 +124,7 @@ def prime(n):
     #at each index from range 2 to n, index is all the numbers that come before n (looks for factorial)
     for i in range(2, n):
         #if any number evenly divides,return false (not prime)
-        if n % i == 0:
+        if i % n == 0:
             return False
         else:
             return True
