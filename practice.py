@@ -158,15 +158,36 @@ def sub_string(astring, substring):
             match += 1
     return match
 
-print sub_string('ABCDCDC', 'CDC')
+# print sub_string('ABCDCDC', 'CDC')
 ###################################################################################################
-def fibonacci():
-    """ adding two numbers together and print out the next number"""
+def fibonacci(n):
+    """ printing all the fibonacci sequence numbers up to a range
+        adding two numbers together and print out the next number
+        example:
+            fib(8) = [0,1,1,2,3,5,8]
+    """
+    results = []
     #initialize a and b
     a, b = 0, 1
-    for i in range (0, 10):
-        print a
+    for i in range(n-1):
+        results.append(a)
         a,b = b, a+b
+
+    return results
+
+# print fibonacci(8)
+###################################################################################################
+def sub_string (str1, sub):
+    """ Using no string functions """
+
+    match = 0
+    for i in str1:
+        if sub[0] == i:
+            match += 1
+
+    return match
+
+print sub_string("ABCDCDC", "CD")
 ###################################################################################################
 class Node(object):
     """ Implement a GetNth() function that takes a linked list and an integer 
